@@ -40,6 +40,18 @@ class ProductServiceProvider extends ServiceProvider
             ]
         ];
 
+        foreach($products as $product){
+            foreach($product as $key=>$value){
+                if(!isset($sortArray[$key])){
+                    $sortArray[$key] = array();
+                }
+                $sortArray[$key][] = $value;
+            }
+        }
+
+        $orderby = "title";
+        array_multisort($sortArray[$orderby],SORT_ASC,$products);
+        
         view()->share('products', $products);
     }
 
