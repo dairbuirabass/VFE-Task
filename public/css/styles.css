@@ -1,17 +1,94 @@
 body {
-    font-family: 'Open Sans';font-size: 22px;
-}
-
-/* General settings */
-.brand-color {
-  background-color: #3bc0c3;
+  font-family: 'Open Sans';
+  font-size: x-large;
 }
 
 /* Header */
+.top-background {
+  background-color: #3bc0c3;
+  height: 1em;
+  width: 100%;
+}
 
-/* Body */
+.top {
+  padding: 1em 0;
+}
+
+.cart {
+  padding: 0.25em 0;
+  font-size: smaller;
+  text-align: center;
+  color: #314350;
+  border: 1px solid #b6c2c9;
+  border-radius: 5px;
+  width: 13em;
+}
+
+.cart i {
+  font-size: larger;
+}
+
+.cart span {
+  font-size: smaller;
+}
+
+/* Navigation */
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navigation li {
+    float: left;
+}
+
+.navigation li a {
+    color: black;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-bottom: 0.25em solid #FFF;
+}
+
+.navigation li a:hover {
+    color: #ffe5e5;
+    background-color: #332730;
+    border-bottom: 0.25em solid #52b9bb;
+}
+
+#sale a {
+  color: #f26767;
+}
+#sale a:hover {
+  color: #f26767;
+}
+
+.navigation .bottom-border {
+  background-color: #0f1922;
+  height: 0.25em;
+  width: 100%;
+}
 
 /* Footer */
-.footer-color {
+.footer {
   background-color: #b6c2c9;
+  color: #ffe5e5;
+}
+
+/* Breakpoints */
+/* Medium devices (tablets, 321 to 939) */
+@media (max-width: 939px) {
+  body {
+    font-size: large;
+  }
+}
+
+/* Small devices (mobile, 320 and less) */
+@media (max-width: 320px) {
+  body {
+    font-size: medium;
+  }
 }
