@@ -329,6 +329,10 @@ button {
   color: #000;
 }
 
+.subscription-result > div {
+  display: none;
+}
+
 /* Breakpoints */
 /* Medium devices (tablets, 321 to 939) */
 @media (max-width: 939px) {

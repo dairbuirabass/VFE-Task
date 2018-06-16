@@ -10,8 +10,11 @@ class NewsletterController extends Controller
     {
         $email = $request->input('email');
 
-        // @todo Complete functionality
-
-        return response()->json([]);
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+        return response()->json(['valid' => $result]);
     }
 }

@@ -11,11 +11,21 @@ $( document ).ready(function() {
   });
 
   $("#subscribe-button").click(function() {
-    var email = $("#newsletter-email");
+    var email = $("#newsletter-email").val();
+
+    $("#subscription-successful").hide();
+    $("#subscription-unsuccessful").hide();
+    $("#subscription-ongoing").show();
     $.ajax({
-      url: "newsletter/subscribe/" + email,
-      success: function(result) {
-        console.log("yay");
+      url: "newsletter/subscribe?email=" + email,
+      success: function(response) {
+        $("#subscription-ongoing").hide();
+        if (response.valid) {
+          $("#subscription-successful").show();
+        } else {
+          $("#subscription-unsuccessful").show();
+        }
+        console.log(response)
       }
     })
     console.log($("#newsletter-email").val());

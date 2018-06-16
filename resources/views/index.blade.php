@@ -163,6 +163,18 @@
           <h4>Newsletter Subscribe</h4>
           <input id="newsletter-email" type="text" name="email" value="" placeholder="Enter your email address">
           <button id="subscribe-button" type="button" name="button">Subscribe</button>
+
+          <div class="subscription-result">
+            <div id="subscription-successful">
+              Subscription successful.
+            </div>
+            <div id="subscription-unsuccessful">
+              Email verification failed...
+            </div>
+            <div id="subscription-ongoing">
+              Subscribing to newsletter...
+            </div>
+          </div>
         </div>
       </div>
     </div>
