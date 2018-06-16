@@ -4,10 +4,16 @@ $( document ).ready(function() {
     $("#cart-total-items").html(result.totalItems);
     $("#cart-total-price").append(result.totalPrice);
     for (let i=0; i < result.items.length; i ++) {
-      var a = "<div><a><img src='" + result.items[i].imgSrc + "' alt='" + result.items[i].name + "'>" +
-      "<h4>" + result.items[i].name + "</h4>" +
-      "<h6>" + result.items[i].qty + " x &euro; " + result.items[i].price + "</h6><i class='fas fa-times'></i></a></div>";
-      $("#cart-content").append(a);
+      var a =
+      "<div>" +
+        "<img src='" + result.items[i].imgSrc + "' alt='" + result.items[i].name + "'>" +
+        "<i class='fas fa-times'></i>" +
+        "<a>" +
+          "<h4>" + result.items[i].name + "</h4>" +
+          "<h6>" + result.items[i].qty + " x &euro; " + result.items[i].price + "</h6>" +
+        "</a>" +
+      "</div>";
+      $("#cart-content").prepend(a);
     }
   });
 
@@ -31,4 +37,14 @@ $( document ).ready(function() {
     })
     console.log($("#newsletter-email").val());
   });
+
+  $("#navigation-toggle").on("click", function () {
+    var x = document.getElementById("navigation");
+    if (x.className === "") {
+        x.className = "responsive";
+    } else {
+        x.className = "";
+    }
+    console.log(x.className);
+  })
 });

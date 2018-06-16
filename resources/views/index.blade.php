@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vaimo Store</title>
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-    <link rel="stylesheet" href="instruction-assets/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="instruction-assets/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/__normalize.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/__jquery.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
@@ -20,19 +21,25 @@
       <!-- Header -->
       <div class="header">
         <div class="logo">
-          <img src="img/logo.png" class="img-fluid logo-img" alt="">
+          <img src="img/logo.png" class="img-fluid" alt="">
+        </div>
+        <div class="collapse">
+          <a id="navigation-toggle" href="javascript:void(0);" class="icon">
+            <i class="fa fa-bars"></i>
+          </a>
         </div>
         <div class="cart">
           <i class="fas fa-shopping-cart"></i>
           <span><span id="cart-total-items"></span> items in your cart <b><span id="cart-total-price">&euro;</span></b></span>
           <div id="cart-content">
+            <button class="custom-button" type="button" name="button">Go to checkout</button>
           </div>
         </div>
       </div>
       <!-- End of Header -->
 
       <!-- Navigation -->
-      <div class="navigation">
+      <div id="navigation">
         <ul class="main-navigation">
           <li><a href="#women">Women</a></li>
           <li><a href="#men">Men</a></li>
@@ -82,95 +89,104 @@
       <!-- End of Navigation -->
 
       <!-- Info -->
-      <div class="info">
-        <div class="splash">
-          <img class="img-fluid" src="img/splash_image.jpg" alt="">
-          <div class="background-box">
+      <div class="container-fluid info">
+        <div class=" row">
+          <div class="col-12 col-md-6">
+            <div class="splash">
+              <img class="img-fluid" src="img/splash_image.jpg" alt="">
+              <div class="background-box">
+              </div>
+              <div class="caption">
+                <h2>Get ready for the autumn</h2>
+                <h4>We have prepared everything for you!</h4>
+              </div>
+            </div>
           </div>
-          <div class="caption">
-            <h2>Get ready for the autumn</h2>
-            <h4>We have prepared everything for you!</h4>
+          <div class="col-12 col-md-6 ">
+            <div class="info-text">
+              <h2>This is Vaimo Store</h4>
+              <h4>Your one step fashion destination</h3>
+              <p>Shop from over 850 of the best brands, including VAIMO’s own label. Plus, get your daily fix of the freshest style, celebrity and music news.</p>
+            </div>
           </div>
-        </div>
-        <div class="info-text">
-          <h2>This is Vaimo Store</h4>
-          <h4>Your one step fashion destination</h3>
-          <p>Shop from over 850 of the best brands, including VAIMO’s own label. Plus, get your daily fix of the freshest style, celebrity and music news.</p>
         </div>
       </div>
       <!-- End of Info -->
 
       <!-- Products -->
-      <div class="products">
+      <div class="container-fluid products">
         <div class="our-favourites">
           <div class="white-box">
-            <h4>Our favourites</h4>
+            <!-- <h4>Our favourites</h4> -->
           </div>
           <div class="black-line"></div>
         </div>
 
         @if(count($products) > 0)
-          <div class="container-fluid">
-            <div class="row mx-auto px-5">
-              @foreach($products as $product)
-                <div class="col-md-3 col-sm-6 px-2 py-2 my-2">
-                  <img class="img-thumbnail" src="{{$product['image']}}" alt="{{$product['title']}}">
-                  <div class="text-center">
-                    <h4>{{$product['title']}}</h4>
-                    <p class="price">
-                      @if(empty($product['specialPrice']))
-                      &euro; {{$product['price']}}
-                      @else
-                      <span class="old-price">&euro; {{$product['price']}} </span> <span class="special-price">&euro; {{$product['specialPrice']}}</span>
-                      @endif
-                    </p>
-                    <button type="button" name="button">Add to cart</button>
-                  </div>
+          <div class="row products-list">
+            @foreach($products as $product)
+              <div class="col-md-3 col-sm-6 products-list-column">
+                <img src="{{$product['image']}}" alt="{{$product['title']}}">
+                <div class="text-center">
+                  <h4>{{$product['title']}}</h4>
+                  <p class="price">
+                    @if(empty($product['specialPrice']))
+                    &euro; {{$product['price']}}
+                    @else
+                    <span class="old-price">&euro; {{$product['price']}} </span> <span class="special-price">&euro; {{$product['specialPrice']}}</span>
+                    @endif
+                  </p>
+                  <button class="custom-button" type="button" name="button">Add to cart</button>
                 </div>
-              @endforeach
-            </div>
+              </div>
+            @endforeach
           </div>
         @endif
       </div>
       <!-- End of Products -->
     </div>
 
-
     <!-- Footer -->
-    <div class="footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h2>Top categories</h2>
-          <ul>
-            <li><a>Women</a></li>
-            <li><a>Men</a></li>
-            <li><a>Junior</a></li>
-            <li><a>Accessories</a></li>
-          </ul>
+    <div class="container-fluid footer">
+      <div class="container row">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="footer-column">
+            <h4>Top categories</h4>
+            <ul>
+              <li><a>Women</a></li>
+              <li><a>Men</a></li>
+              <li><a>Junior</a></li>
+              <li><a>Accessories</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-column">
-          <h2>Customer service</h2>
-          <ul>
-            <li><a>Returns</a></li>
-            <li><a>Shipping</a></li>
-            <li><a>About us</a></li>
-            <li><a>Contact us</a></li>
-          </ul>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="footer-column">
+            <h4>Customer service</h4>
+            <ul>
+              <li><a>Returns</a></li>
+              <li><a>Shipping</a></li>
+              <li><a>About us</a></li>
+              <li><a>Contact us</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-column newsletter">
-          <h2>Newsletter Subscribe</h2>
-          <input id="newsletter-email" type="text" name="email" value="" placeholder="Enter your email address">
-          <button id="subscribe-button" type="button" name="button">Subscribe</button>
+        <div class="col-12 col-md-12 col-lg-6">
+          <div class="footer-column newsletter">
+            <h4>Newsletter Subscribe</h4>
+            <input class="custom-input" id="newsletter-email" type="text" name="email" value="" placeholder="Enter your email address">
+            <button class="custom-button" id="subscribe-button" type="button" name="button">Subscribe</button>
 
-          <div class="subscription-result">
-            <div id="subscription-successful">
-              <i class="fas fa-check"></i>Subscription successful.
-            </div>
-            <div id="subscription-unsuccessful">
-              <i class="fas fa-exclamation-triangle"></i> Email verification failed...
-            </div>
-            <div id="subscription-ongoing">
-              <i class="fas fa-spinner"></i> Subscribing to newsletter...
+            <div class="subscription-result">
+              <div id="subscription-successful">
+                <i class="fas fa-check"></i>Subscription successful.
+              </div>
+              <div id="subscription-unsuccessful">
+                <i class="fas fa-exclamation-triangle"></i> Email verification failed...
+              </div>
+              <div id="subscription-ongoing">
+                <i class="fas fa-spinner"></i> Subscribing to newsletter...
+              </div>
             </div>
           </div>
         </div>
