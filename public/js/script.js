@@ -1,13 +1,14 @@
 $( document ).ready(function() {
   $.getJSON("cart/get", function(result){
+    console.log(result);
     $("#cart-total-items").html(result.totalItems);
-    $("#cart-total-price").html(result.totalPrice);
+    $("#cart-total-price").append(result.totalPrice);
     for (let i=0; i < result.items.length; i ++) {
-      var a = "<a>" + result.items[i].name;
-      a += result.items[i].qty + " x &euro; " + result.items[i].price + "</a>";
+      var a = "<div><a><img src='" + result.items[i].imgSrc + "' alt='" + result.items[i].name + "'>" +
+      "<h4>" + result.items[i].name + "</h4>" +
+      "<h6>" + result.items[i].qty + " x &euro; " + result.items[i].price + "</h6><i class='fas fa-times'></i></a></div>";
       $("#cart-content").append(a);
     }
-    console.log(result)
   });
 
   $("#subscribe-button").click(function() {

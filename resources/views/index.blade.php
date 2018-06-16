@@ -24,7 +24,7 @@
         </div>
         <div class="cart">
           <i class="fas fa-shopping-cart"></i>
-          <span><span id="cart-total-items"></span> items in your cart <b>&euro;<span id="cart-total-price"></span></b></span>
+          <span><span id="cart-total-items"></span> items in your cart <b><span id="cart-total-price">&euro;</span></b></span>
           <div id="cart-content">
           </div>
         </div>
@@ -100,8 +100,6 @@
       </div>
       <!-- End of Info -->
 
-      <p id="demo">YOYOYOYO</p>
-
       <!-- Products -->
       <div class="products">
         <div class="our-favourites">
@@ -142,7 +140,7 @@
     <div class="footer">
       <div class="footer-container">
         <div class="footer-column">
-          <h4>Top categories</h4>
+          <h2>Top categories</h2>
           <ul>
             <li><a>Women</a></li>
             <li><a>Men</a></li>
@@ -151,7 +149,7 @@
           </ul>
         </div>
         <div class="footer-column">
-          <h4>Customer service</h4>
+          <h2>Customer service</h2>
           <ul>
             <li><a>Returns</a></li>
             <li><a>Shipping</a></li>
@@ -160,19 +158,19 @@
           </ul>
         </div>
         <div class="footer-column newsletter">
-          <h4>Newsletter Subscribe</h4>
+          <h2>Newsletter Subscribe</h2>
           <input id="newsletter-email" type="text" name="email" value="" placeholder="Enter your email address">
           <button id="subscribe-button" type="button" name="button">Subscribe</button>
 
           <div class="subscription-result">
             <div id="subscription-successful">
-              Subscription successful.
+              <i class="fas fa-check"></i>Subscription successful.
             </div>
             <div id="subscription-unsuccessful">
-              Email verification failed...
+              <i class="fas fa-exclamation-triangle"></i> Email verification failed...
             </div>
             <div id="subscription-ongoing">
-              Subscribing to newsletter...
+              <i class="fas fa-spinner"></i> Subscribing to newsletter...
             </div>
           </div>
         </div>
