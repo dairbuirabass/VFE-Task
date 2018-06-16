@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/__normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/__jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </head>
   <body>
     <div class="top-background">
@@ -22,7 +24,9 @@
         </div>
         <div class="cart">
           <i class="fas fa-shopping-cart"></i>
-          <span>3 items in your cart <b>&euro;75</b></span>
+          <span><span id="cart-total-items"></span> items in your cart <b>&euro;<span id="cart-total-price"></span></b></span>
+          <div id="cart-content">
+          </div>
         </div>
       </div>
       <!-- End of Header -->
@@ -96,14 +100,19 @@
       </div>
       <!-- End of Info -->
 
-
+      <p id="demo">YOYOYOYO</p>
 
       <!-- Products -->
-      <div class="our-favourites">
-        <h4>Our favourites</h4>
+      <div class="products">
+        <div class="our-favourites">
+          <div class="white-box">
+            <h4>Our favourites</h4>
+          </div>
+          <div class="black-line"></div>
+        </div>
 
-        <div class="products">
-          @if(count($products) > 0)
+        @if(count($products) > 0)
+          <div class="container-fluid">
             <div class="row mx-auto px-5">
               @foreach($products as $product)
                 <div class="col-md-3 col-sm-6 px-2 py-2 my-2">
@@ -117,13 +126,13 @@
                       <span class="old-price">&euro; {{$product['price']}} </span> <span class="special-price">&euro; {{$product['specialPrice']}}</span>
                       @endif
                     </p>
-                    <button class="add-to-cart" type="button" name="button">Add to cart</button>
+                    <button type="button" name="button">Add to cart</button>
                   </div>
                 </div>
               @endforeach
             </div>
-          @endif
-        </div>
+          </div>
+        @endif
       </div>
       <!-- End of Products -->
     </div>
@@ -131,7 +140,31 @@
 
     <!-- Footer -->
     <div class="footer">
-
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4>Top categories</h4>
+          <ul>
+            <li><a>Women</a></li>
+            <li><a>Men</a></li>
+            <li><a>Junior</a></li>
+            <li><a>Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Customer service</h4>
+          <ul>
+            <li><a>Returns</a></li>
+            <li><a>Shipping</a></li>
+            <li><a>About us</a></li>
+            <li><a>Contact us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column newsletter">
+          <h4>Newsletter Subscribe</h4>
+          <input id="newsletter-email" type="text" name="email" value="" placeholder="Enter your email address">
+          <button id="subscribe-button" type="button" name="button">Subscribe</button>
+        </div>
+      </div>
     </div>
     <!-- End of Footer -->
   </body>

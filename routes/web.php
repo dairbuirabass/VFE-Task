@@ -12,3 +12,12 @@
 */
 
 $router->get('/', 'Controller@index');
+
+$router->get('instruction', function () use ($router) {
+    // return view('instruction');
+    return Cache::get( 'cart' );
+});
+
+$router->get('cart/get', 'CartController@get');
+
+$router->get('newsletter/subscribe', 'NewsletterController@subscribe');
