@@ -55,7 +55,7 @@
           <li><a href="#accessories">Accessories</a></li>
           <li id="collections"><a href="#collections">Collections</a>
             <ul class="collection-dropdown">
-              <li class="collection-year"><a href="#">2014</a>
+              <li class="collection-year"><a href="#">2014<i class="fas fa-caret-right"></i></a>
                 <ul>
                   <li><a href="#">Summer</a></li>
                   <li><a href="#">Autumn</a></li>
@@ -63,7 +63,7 @@
                   <li><a href="#">Spring</a></li>
                 </ul>
               </li>
-              <li class="collection-year"><a href="#">2013</a>
+              <li class="collection-year"><a href="#">2013<i class="fas fa-caret-right"></i></a>
                 <ul>
                   <li><a href="#">Summer</a></li>
                   <li><a href="#">Autumn</a></li>
@@ -71,7 +71,7 @@
                   <li><a href="#">Spring</a></li>
                 </ul>
               </li>
-              <li class="collection-year"><a href="#">2012</a>
+              <li class="collection-year"><a href="#">2012<i class="fas fa-caret-right"></i></a>
                 <ul>
                   <li><a href="#">Summer</a></li>
                   <li><a href="#">Autumn</a></li>
@@ -79,7 +79,7 @@
                   <li><a href="#">Spring</a></li>
                 </ul>
               </li>
-              <li class="collection-year"><a href="#">2011</a>
+              <li class="collection-year"><a href="#">2011<i class="fas fa-caret-right"></i></a>
                 <ul>
                   <li><a href="#">Summer</a></li>
                   <li><a href="#">Autumn</a></li>
@@ -124,10 +124,10 @@
       <!-- Products -->
       <div class="container-fluid products">
         <div class="our-favourites">
-          <div class="white-box">
-            <!-- <h4>Our favourites</h4> -->
-          </div>
           <div class="black-line"></div>
+          <div class="text">
+            <h4>Our favourites</h4>
+          </div>
         </div>
 
         @if(count($products) > 0)
