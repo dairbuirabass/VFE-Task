@@ -26,13 +26,13 @@
         </div>
         <div class="collapse">
           <div id="navigation-toggle" href="javascript:void(0);" class="icon">
-            <i class="fas fa-bars fa-fw"></i>
+            <i class="fas fa-fw fa-bars"></i>
           </div>
         </div>
         <div class="cart">
           <div class="collapse">
             <div id="cart-collapse" href="javascript:void(0);" class="icon">
-              <i class="fas fa-shopping-cart fa-fw"></i>
+              <i class="fas fa-fw fa-shopping-cart"></i>
             </div>
           </div>
           <div id="cart-desktop">

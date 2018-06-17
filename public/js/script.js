@@ -1,12 +1,12 @@
-$( document ).ready(function() {
-  $.getJSON("cart/get", function(result){
+$( document ).ready(function () {
+  $.getJSON("cart/get", function(result) {
     $("#cart-total-items").html(result.totalItems);
     $("#cart-total-price").append(result.totalPrice);
     for (let i=0; i < result.items.length; i ++) {
       var a =
       "<div>" +
         "<img src='" + result.items[i].imgSrc + "' alt='" + result.items[i].name + "'>" +
-        "<i class='fas fa-times'></i>" +
+        "<i class='fas fa-times fa-2x'></i>" +
         "<a>" +
           "<h4>" + result.items[i].name + "</h4>" +
           "<h6>" + result.items[i].qty + " x &euro; " + result.items[i].price + "</h6>" +
