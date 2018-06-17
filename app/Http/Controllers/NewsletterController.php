@@ -15,6 +15,7 @@ class NewsletterController extends Controller
         } else {
             $result = false;
         }
+
         return response()->json(['valid' => $result]);
     }
 }

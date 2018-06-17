@@ -1,6 +1,5 @@
 $( document ).ready(function() {
   $.getJSON("cart/get", function(result){
-    console.log(result);
     $("#cart-total-items").html(result.totalItems);
     $("#cart-total-price").append(result.totalPrice);
     for (let i=0; i < result.items.length; i ++) {
@@ -32,10 +31,8 @@ $( document ).ready(function() {
         } else {
           $("#subscription-unsuccessful").show();
         }
-        console.log(response)
       }
     })
-    console.log($("#newsletter-email").val());
   });
 
   $("#navigation-toggle").on("click", function () {
@@ -45,6 +42,15 @@ $( document ).ready(function() {
     } else {
         x.className = "";
     }
-    console.log(x.className);
+  })
+
+  $("#cart-collapse").on("click", function () {
+    var x = document.getElementById("cart-content");
+    if (x.className === "") {
+        x.className = "responsive";
+    } else {
+        x.className = "";
+    }
+    console.log("hm");
   })
 });
