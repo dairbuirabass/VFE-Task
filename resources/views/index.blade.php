@@ -6,7 +6,6 @@
     <title>Vaimo Store</title>
     <link rel="icon" href="img/logo-icon.png">
     <link href='https://fonts.googleapis.com/css?family=Open Sans:300,400,500,600,700,800,900' rel='stylesheet'>
-    <!-- <link rel="stylesheet" href="instruction-assets/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/__normalize.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
@@ -135,13 +134,13 @@
             @foreach($products as $product)
               <div class="col-md-3 col-sm-6 products-list-column">
                 <img src="{{$product['image']}}" alt="{{$product['title']}}">
-                <div class="text-center">
+                <div>
                   <h4>{{$product['title']}}</h4>
                   <p class="price">
                     @if(empty($product['specialPrice']))
                     &euro; {{$product['price']}}
                     @else
-                    <span class="old-price">&euro; {{$product['price']}} </span> <span class="special-price">&euro; {{$product['specialPrice']}}</span>
+                    <span class="old-price">&euro; {{$product['price']}}</span><span class="special-price">&euro; {{$product['specialPrice']}}</span>
                     @endif
                   </p>
                   <button class="custom-button" type="button" name="button">Add to cart</button>
